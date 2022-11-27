@@ -1,0 +1,18 @@
+[
+  {
+    "type": "Rahti to Anywhere",
+    "price": 25.99
+  },
+  {
+    "type": "In 2 days delivery",
+    "price": 9.99
+  },
+  {
+    "type": "Normal Postipaketti",
+    "price": 2.99
+  },
+  {
+    "type": "Pick up from Store",
+    "price": 0
+  }
+]

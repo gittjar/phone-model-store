@@ -1,0 +1,19 @@
+<head>
+<meta charset="iso-8859-1" />
+</head>
+<div *ngFor="let product of products">
+
+  <h3>
+  <button type="button" (click)="share()">Share</button>
+    <a href="#" class="tooltip"
+    
+      [title]="product.name + ' details'"
+      [routerLink]="['/products', product.id]">
+      {{ product.name }} 
+    </a>
+    
+  </h3>
+
+  <!-- . . . -->
+
+</div>
