@@ -1,0 +1,45 @@
+<h3>Ostoskorisi</h3>
+
+<p>
+  <a routerLink="/shipping">Toimitusmaksut</a>
+</p>
+
+
+<div class="cart-item" *ngFor="let item of items">
+  <span>{{ item.name }}</span>
+  <span>{{ item.price | currency }}</span>
+</div>
+
+<form [formGroup]="checkoutForm" (ngSubmit)="onSubmit()">
+
+  <div>
+    <label for="name">
+      Name
+    </label>
+    <input id="name" type="text" formControlName="name">
+  </div>
+
+  <div>
+    <label for="address">
+      Address
+    </label>
+    <input id="address" type="text" formControlName="address">
+  </div>
+
+  <button class="button" type="submit">Purchase</button>
+
+</form>
+
+<!--
+<table class="cart-item" *ngFor="let item of items">
+	<tr>
+	<td><h3>Tuote:<br>{{item.name}}</h3></td><br>
+	<td><h3>Hinta:<br>{{item.price | currency}}</h3></td><br>
+	<td><img src="{{item.image}}"></td>	
+	</tr>
+</table>
+-->
+
+<!--
+<button type="button" class="delete" (click)="clearCart()" routerLink="/">Tyhjenna ostoskori</button>
+-->

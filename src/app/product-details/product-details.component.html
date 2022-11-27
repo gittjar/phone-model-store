@@ -1,0 +1,90 @@
+<head>
+<meta charset="iso-8859-1" />
+</head>
+
+
+<h2>Tuotteiden lisatiedot</h2>
+
+<!--
+<div *ngIf="product">
+  <h3>{{ product.name }}</h3>
+  <h4>{{ product.price | currency }}</h4>
+  <p>{{ product.description }}</p>
+  <p> <img src="{{product.image}}"> </p>
+  <br>
+  
+  <button type="button" (click)="addToCart(product)">Osta</button>
+</div> 
+-->
+
+
+<table *ngIf="product">
+
+	<tr>
+	<th>Tuote</th>
+	<th>Hinta</th>
+	<th>Varastosaldo</th>
+	<th>Myymalasaatavuus</th>
+	</tr>
+
+	<tr>
+	<td><h3>{{product.name}}</h3></td>
+	<td><h3>{{product.price | currency}}</h3></td>
+	<td><h3>{{product.varasto}}</h3></td>
+		<td>
+		<select class="boksi">
+		<!--
+		<option *ngFor="let product of products" [value]="product.id"><br>{{product.myymala}}<br>
+		-->
+		<option ><br>{{product.myymala1}}</option>
+		<option ><br>{{product.myymala2}}</option>
+		<option ><br>{{product.myymala3}}</option>
+		</select>
+		</td>
+	
+	</tr>
+	
+	<tr>
+	<th></th>
+	<th>Tuotetiedot</th>
+	<th>Lisainfo</th>
+	<th></th>
+	</tr>
+	
+	<tr>
+	<td><img src="{{product.image}}"> </td>
+	<td> <p>{{product.description}}</p></td>
+	<td>- info# <br> - info1 <br> - info2 <br> - info3</td>
+	<td></td>
+	</tr>
+	
+	<tr>
+	<th>Toimitusmaksut</th>
+	<th>otsikko2</th>
+	<th>Color</th>
+	<th></th>
+	</tr>
+	
+	<tr>
+	<td><p><a routerLink="/shipping">Toimitusmaksut</a></p></td>
+	<td>Lisainfo 2 here</td>
+
+	<td>Tuotteen color</td>
+	<td></td>
+	</tr>
+
+	<tr>
+	<td><button type="button" (click)="goBack()">Palaa</button></td>
+	<td></td>
+	<td></td>
+	<td><button type="button" (click)="addToCart(product)">Osta</button></td>
+	</tr>
+</table>
+
+<!--
+<footer class="footer1">
+  <p>Aapon verkkokauppa c 2022</p>
+</footer>
+-->
+
+
