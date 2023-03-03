@@ -11,6 +11,7 @@ import { ProductDetailsComponent } from './product-details/product-details.compo
 import { AngularImageViewerModule } from "@hreimer/angular-image-viewer";
 import { CartComponent } from './cart/cart.component';
 import { ShippingComponent } from './shipping/shipping.component';
+
 //import { NgSelectModule } from '@ng-select/ng-select';
 //import { FormsModule } from '@angular/forms';
 
@@ -32,7 +33,7 @@ import { ShippingComponent } from './shipping/shipping.component';
     ])
   ],
 
-// importsiin myös DEFAULT_CURRENCY_CODE näyttää hinnat euroina
+// importsiin myï¿½s DEFAULT_CURRENCY_CODE nï¿½yttï¿½ï¿½ hinnat euroina
   
     providers: [
       { provide: DEFAULT_CURRENCY_CODE, useValue: 'EUR' },

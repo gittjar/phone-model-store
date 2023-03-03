@@ -17,7 +17,7 @@ export class ProductDetailsComponent implements OnInit {
   product: Product | undefined;
 
 	
-   //location lisätään myös constructoriin 
+   //location constructoriin 
   constructor(private route: ActivatedRoute, private cartService: CartService, private location: Location) { }
   
   ngOnInit() {
@@ -38,8 +38,6 @@ export class ProductDetailsComponent implements OnInit {
   addToCart(product: Product) {
     this.cartService.addToCart(product);
     window.alert('Tuote on nyt lisatty ostoskoriin!');
-    
-  
   }
 
 }

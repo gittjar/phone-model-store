@@ -1,24 +1,30 @@
-      .tooltip {
-        border-bottom: 1px dashed;
-        text-decoration: none;
+
+
+      .card {
+        border: 1px solid black;
+        border-radius: 5px;
+        margin: 4%;
+        padding: 5px;
       }
-      .tooltip:hover {
-        cursor: default;
-        position: relative;
-      }
-      .tooltip span {
-        display: none;
-      }
-      .tooltip:hover span {
-        border: #666 2px dotted;
-        padding: 5px 20px 5px 5px;
-        display: block;
-        z-index: 100;
-        background: #e3e3e3;
-        left: 0px;
-        margin: 15px;
-        width: 300px;
-        position: absolute;
-        top: 15px;
-        text-decoration: none;
-      }
+
+
+
+      figure {
+        width: 100%;
+       /* border: black solid 1px; */
+        padding: 0.1rem;
+    }    
+    figure img {
+        max-width: 100%;   
+    }
+
+/*Keskellä olevat somelinkin*/
+    .bi {
+        padding: 5px;
+        color: rgb(243, 103, 253);
+    }
+
+    .bix {
+      padding: 5px;
+      color: rgb(87, 7, 96);
+    }
