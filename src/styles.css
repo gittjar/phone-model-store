@@ -3,14 +3,32 @@ body {
   margin: 0;
   font-size: 14px;
   font-family:Verdana, Geneva, Tahoma, sans-serif;
-
 }
+
+
 
 .main-productlist {
   display: flex;
+  flex-direction: column;
+}
+
+.somekuvake {
+  display: flex;
   flex-direction: row;
+}
+
+
+/* Desktop CSS rules */ 
+@media only screen and (min-width: 769px) { 
+  .main-productlist {
+    display: flex;
+    flex-direction: row;
+  }
 
 }
+
+
+
 
 
 
@@ -22,12 +40,17 @@ h1 {
 
 }
 
-h2 {
-  font-size: 20px;
-}
 
-h1, h2 {
-  font-weight: lighter;
+.price {
+
+border-bottom: 6px solid rgb(3, 195, 3);
+border-top: 2px solid rgb(3, 195, 3);
+background-color: #ddfddd;
+color: rgb(3, 195, 3);
+padding: 5px;
+border-radius: 5px;
+margin-left: 2%;
+font-size: 1.5rem;
 }
 
 p {
@@ -102,30 +125,30 @@ label {
 
 
   .kassabutton {
-
-  appearance: none;
-  background-color: #000000;
-  border: 1px solid #1A1A1A;
-  border-radius: 10px;
-  box-sizing: border-box;
-  color: #FFFFFF;
-  cursor: pointer;
-  display: inline-block;
-  font-family: Roobert,-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
-  font-size: 15px;
-  font-weight: 600;
-  line-height: normal;
-  outline: none;
-  padding: 10px 14px;
-  text-align: center;
-  text-decoration: none;
-  transition: all 300ms cubic-bezier(.23, 1, 0.32, 1);
-  user-select: none;
-  -webkit-user-select: none;
-  touch-action: manipulation;
-  width: 170px;
-  will-change: transform;
+    margin-right: 20px;
+    border-radius: 5px;
+    padding: 5px;
+    border: 2px solid rgb(40, 24, 24);
 }
+.kassabutton:hover {
+  background-color: transparent;
+}
+
+
+
+
+
+.material-icons{
+  
+}
+.ostoskarry{
+  font-size: 2.5rem;
+}
+
+.ostoskarry:hover{
+  color: white;
+}
+
 
 
 .backbutton {
@@ -136,7 +159,6 @@ border-radius: 5px;
 }
 .backbutton:hover {
   background-color: transparent; 
-
 }
 
 /* Fancy Button */
@@ -148,9 +170,7 @@ border-radius: 5px;
 
 .fancy-button i.material-icons {
   color: #1976d2;
-  padding-right: 14px;
-  border-radius: 5px;
-  
+
 }
 
 
@@ -208,9 +228,9 @@ app-top-bar h1 {
   width: 100%;
   height: 38px;
   background-color: #f74f17;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
- 
+
+}
+.text-muted {
+  margin: 2%;
+  padding-top: 2px;
 }

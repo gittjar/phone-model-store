@@ -1,18 +1,18 @@
 [
   {
-    "type": "Rahti to Anywhere",
+    "type": "Toimitus haluaamaasi paikkaan (24h)",
     "price": 25.99
   },
   {
-    "type": "In 2 days delivery",
+    "type": "2 arkipäivän sisällä toimitus",
     "price": 9.99
   },
   {
-    "type": "Normal Postipaketti",
+    "type": "Normaali postipaketti'",
     "price": 2.99
   },
   {
-    "type": "Pick up from Store",
+    "type": "Nouda kaupastamme",
     "price": 0
   }
 ]

@@ -47,7 +47,8 @@ import { ShippingComponent } from './shipping/shipping.component';
     ProductListComponent,
     ProductDetailsComponent,
     CartComponent,
-    ShippingComponent ],
+    ShippingComponent
+   ],
   
   
   

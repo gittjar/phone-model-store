@@ -16,6 +16,8 @@ export class ProductDetailsComponent implements OnInit {
   
   product: Product | undefined;
 
+ 
+
 	
    //location constructoriin 
   constructor(private route: ActivatedRoute, private cartService: CartService, private location: Location) { }

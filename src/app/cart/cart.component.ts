@@ -32,9 +32,9 @@ export class CartComponent {
     console.warn('Your order has been submitted', this.checkoutForm.value);
     this.checkoutForm.reset();
   
- //   clearCart() : void {
- //   this.cartService.items = []
- //   window.alert('Ostoskorisi on tyhjennetty!');
+   // clearCart(): void {
+   //this.cartService.items = []
+  //  console.alert('Ostoskorisi on tyhjennetty!');
   }
     
   }

@@ -14,7 +14,9 @@ export class ProductListComponent {
   products = products;
   product: Product | undefined;
 
-
+    //  määrittely true / false muuttaa väriä
+    cardSGreen: string = '#06E703';
+    cardSRed: string = '#E72203';
 
   constructor(private cartService: CartService) { }
 
