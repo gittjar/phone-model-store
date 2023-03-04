@@ -19,6 +19,9 @@
 		<div class="card-body">
 		  <h5 class="card-title"></h5>
 		  <p class="card-text">{{product.description}}</p>
+		  <p class="card-text">Materiaali: {{product.mainmaterial}}</p>
+		  <p class="card-text">Varastossa: {{product.varastossa}}</p>
+
 		  <p class="card-text"><small class="text-muted">
 			<button class="ostabutton" (click)="addToCart(product)">Osta</button>
 			<p><a routerLink="/shipping">Toimitusmaksut</a></p></small></p>

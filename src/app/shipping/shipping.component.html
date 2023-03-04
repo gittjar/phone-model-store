@@ -1,6 +1,8 @@
-<h3>Rahtikulut</h3>
+<section class="toimituskulut">
 
+<h3>Rahtikulut</h3>
 <div class="shipping-item" *ngFor="let shipping of shippingCosts | async">
   <span>{{ shipping.type }}</span>
   <span>{{ shipping.price | currency }}</span>
 </div>
+</section>
