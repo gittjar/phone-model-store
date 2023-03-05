@@ -3,8 +3,6 @@ import { products } from '../products';
 import { CartService } from '../cart.service';
 import { Product } from '../products';
 
-
-
 @Component({
   selector: 'app-product-list',
   templateUrl: './product-list.component.html',
@@ -27,8 +25,6 @@ export class ProductListComponent {
   shareSome() {
     window.alert('Tuote jaettu sosiaaliseen mediaan!');
   }
-
-
 
   addToCart(product: Product) {
     this.cartService.addToCart(product);

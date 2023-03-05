@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "angular-web-applications": {
+      "hosting": {
+        "verkkokauppa": [
+          "puhelinkauppa"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "angular-web-applications"
+  }
+}

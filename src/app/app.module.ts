@@ -15,6 +15,9 @@ import { ShippingComponent } from './shipping/shipping.component';
 //import { NgSelectModule } from '@ng-select/ng-select';
 //import { FormsModule } from '@angular/forms';
 
+import { MatIconModule } from '@angular/material/icon';
+
+
 
 
 @NgModule({
@@ -23,6 +26,7 @@ import { ShippingComponent } from './shipping/shipping.component';
     HttpClientModule,
     ReactiveFormsModule,
     AngularImageViewerModule,
+    MatIconModule,
 //    NgSelectModule,
 //    FormsModule,
     RouterModule.forRoot([

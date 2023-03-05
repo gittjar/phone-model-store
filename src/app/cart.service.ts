@@ -9,7 +9,7 @@ import { Injectable } from '@angular/core';
 export class CartService {
   items: Product[] = [];
   
- // http pyynnöllä haetaan tiedot "palvelimelta" 
+ // http pyynnï¿½llï¿½ haetaan tiedot "palvelimelta" 
   getShippingPrices() 
   {
     return this.http.get<{type: string, price: number}[]>('/assets/shipping.json'); 
@@ -17,11 +17,13 @@ export class CartService {
   
    constructor(private http: HttpClient) { }
   
-// addtocart liitetty nappiin, lisää tuotteen ostoskoriin
+// addtocart liitetty nappiin, lisÃ¤Ã¤ tuotteen ostoskoriin
   addToCart(product: Product) 
   {
     this.items.push(product);
   }
+
+
 
   getItems() 
   {
@@ -38,6 +40,12 @@ export class CartService {
     return this.items;
   }
 
+count = 0;
+
+getMaara() {
+  this.items.length;
+  return this.count;
+}
 	
 
 

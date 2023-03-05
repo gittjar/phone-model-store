@@ -101,6 +101,16 @@
             ],
             "scripts": []
           }
+        },
+        "deploy": {
+          "builder": "@angular/fire:deploy",
+          "options": {
+            "prerender": false,
+            "ssr": false,
+            "browserTarget": "verkkokauppa:build:production",
+            "firebaseProject": "angular-web-applications",
+            "firebaseHostingSite": "puhelinkauppa"
+          }
         }
       }
     }
