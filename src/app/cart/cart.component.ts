@@ -13,18 +13,18 @@ export class CartComponent {
 
 	items = this.cartService.getItems();
 	delete = this.cartService.clearCart();
+
+  
 	
 	  checkoutForm = this.formBuilder.group({
     		name: '',
-    		address: ''
-  											});
+    		address: '' });
 
   constructor(
-    
     private cartService: CartService,
-    private formBuilder: FormBuilder, 
-    
-  ) { }
+    private formBuilder: FormBuilder,  
+  ) 
+  { }
   
   	  onSubmit(): void {
     // Process checkout data here
