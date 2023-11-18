@@ -1,50 +1,36 @@
-
 <section class="ostoskori">
 
-<h3>Ostoskorisi</h3>
-<p>
-  <a routerLink="/shipping">Toimitusmaksut</a>
-</p>
+    <!-- Display a message after submitting the form -->
+    <div *ngIf="orderSubmitted">
+      <span class="kiitos">Kiitos tilauksesta!</span>
+    </div>
 
 
-<div class="cart-item" *ngFor="let item of items">
-  <span>{{ item.name }}</span>
-  <span>{{ item.price | currency }}</span>
-</div>
+  <h3>Ostoskorisi</h3>
+  <p>
+    <a routerLink="/shipping">Toimitusmaksut</a>
+  </p>
 
-<form [formGroup]="checkoutForm" (ngSubmit)="onSubmit()">
-
-  <div>
-    <label for="name">
-      Nimi
-    </label>
-    <input id="name" type="text" formControlName="name">
+  <div class="cart-item" *ngFor="let item of items">
+    <span>{{ item.name }}</span>
+    <span>{{ item.price | currency }}</span>
   </div>
 
-  <div>
-    <label for="address">
-      Osoite
-    </label>
-    <input id="address" type="text" formControlName="address">
-  </div>
-<br>
-  <button class="button" type="submit">Tilaa</button>
-  <br><br>
-  <button class="button" routerLink="/">Takaisin kauppaan</button>
+  <form [formGroup]="checkoutForm" (ngSubmit)="onSubmit()">
+    <div>
+      <label for="name">Nimi</label>
+      <input id="name" type="text" formControlName="name">
+    </div>
 
-</form>
+    <div>
+      <label for="address">Osoite</label>
+      <input id="address" type="text" formControlName="address">
+    </div>
+    <br>
+    <button class="button" type="submit">Tilaa</button>
+    <br><hr>
+    <button class="button" routerLink="/">Takaisin kauppaan</button>
+  </form>
+
+
 </section>
-
-<!--
-<table class="cart-item" *ngFor="let item of items">
-	<tr>
-	<td><h3>Tuote:<br>{{item.name}}</h3></td><br>
-	<td><h3>Hinta:<br>{{item.price | currency}}</h3></td><br>
-	<td><img src="{{item.image}}"></td>	
-	</tr>
-</table>
--->
-
-<!--
-<button type="button" class="delete" (click)="clearCart()" routerLink="/">Tyhjenna ostoskori</button>
--->

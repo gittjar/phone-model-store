@@ -12,11 +12,10 @@ import { CartService } from '../cart.service';
 export class CartComponent {
 
 	items = this.cartService.getItems();
-	delete = this.cartService.clearCart();
+  orderSubmitted = false; // Flag to track if the order has been submitted
 
-  
-	
-	  checkoutForm = this.formBuilder.group({
+
+  checkoutForm = this.formBuilder.group({
     		name: '',
     		address: '' });
 
@@ -26,15 +25,13 @@ export class CartComponent {
   ) 
   { }
   
-  	  onSubmit(): void {
+  onSubmit(): void {
     // Process checkout data here
-    this.items = this.cartService.clearCart();
     console.warn('Your order has been submitted', this.checkoutForm.value);
+    this.cartService.clearCart();
     this.checkoutForm.reset();
-  
-   // clearCart(): void {
-   //this.cartService.items = []
-  //  console.alert('Ostoskorisi on tyhjennetty!');
+    this.orderSubmitted = true; // Set the flag to true after submitting the form
+
   }
     
   }
