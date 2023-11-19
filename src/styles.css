@@ -151,7 +151,9 @@ label {
 
 .kiitos {
   background-color: #fbc2af;
-  padding: 2%;
+  padding: 1%;
+  border-radius: 10px;
+  border: #3009bb 1px solid;
 }
 
 
