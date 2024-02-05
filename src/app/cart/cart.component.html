@@ -1,9 +1,9 @@
 <section class="ostoskori">
 
-    <!-- Display a message after submitting the form -->
+    <!-- Display a message after submitting the form 
     <div *ngIf="orderSubmitted">
       <span class="kiitos">Kiitos tilauksesta!</span>
-    </div>
+    </div>-->
 
 
   <h3>Ostoskorisi</h3>
@@ -14,7 +14,11 @@
   <div class="cart-item" *ngFor="let item of items">
     <span>{{ item.name }}</span>
     <span>{{ item.price | currency }}</span>
+    <span>Quantity: {{ item.quantity }}</span>
+    <button (click)="decreaseItem(item)">Decrease</button>
+    <button (click)="increaseItem(item)">Increase</button>
   </div>
+  <p>Yhteensä: {{ totalPrice }} €</p>
 
   <form [formGroup]="checkoutForm" (ngSubmit)="onSubmit()">
     <div>

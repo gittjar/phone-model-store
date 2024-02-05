@@ -44,7 +44,8 @@ input {
 }
 
 .button:hover {
-  background-color:transparent;
-  color: black;
+  background-color:#243dc9;
+  color: #fff;
+
 
 }

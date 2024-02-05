@@ -16,6 +16,9 @@ import { ShippingComponent } from './shipping/shipping.component';
 //import { FormsModule } from '@angular/forms';
 
 import { MatIconModule } from '@angular/material/icon';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
+
+
 
 
 
@@ -25,6 +28,7 @@ import { MatIconModule } from '@angular/material/icon';
     BrowserModule,
     HttpClientModule,
     ReactiveFormsModule,
+    MatSnackBarModule,
     AngularImageViewerModule,
     MatIconModule,
 //    NgSelectModule,

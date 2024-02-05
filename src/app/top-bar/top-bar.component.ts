@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-
 import { CartService } from '../cart.service';
 
 
@@ -9,14 +8,14 @@ import { CartService } from '../cart.service';
   styleUrls: ['./top-bar.component.css']
 })
 export class TopBarComponent implements OnInit {
+cartItemCount: any;
 
 
   constructor (private cartService : CartService) {}
 
  
   ngOnInit (){
-    
-    
+    this.cartService.cartItemCount.subscribe(count => this.cartItemCount = count);
   }
 
 

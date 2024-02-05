@@ -1,32 +1,25 @@
-<head>
-<meta charset="iso-8859-1" />
-</head>
 <section *ngIf="product">
-
-<h1>Puhelimen {{product.name}} lisätiedot</h1>
-
-<div class="card mb-3" style="max-width: 540px;" >
-	<div class="row g-0">
-		<article class="prod-details-head">
-		<span class="flexgrow9">{{product.name}}</span>
+	<div class="card">
+	  <div class="prod-details-head">
+		<h1 class="flexgrow9">{{product.name}}</h1>
 		<button type="button" class="backbutton" (click)="goBack()"><i class="material-icons">close</i></button>
-	</article>
-		<h1>{{product.price | currency}}</h1>
-	  <div class="col-md-4">
-		<img src="{{product.image}}">
 	  </div>
-	  <div class="col-md-8">
-		<div class="card-body">
-		  <h5 class="card-title"></h5>
-		  <p class="card-text">{{product.description}}</p>
-		  <p class="card-text">Materiaali: {{product.mainmaterial}}</p>
-		  <p class="card-text">Varastossa: {{product.varastossa}}</p>
-
-		  <p class="card-text"><small class="text-muted">
+	  <div class="row">
+		<div class="col-md-4">
+		  <div *ngFor="let image of product.images">
+			<img [src]="image" class="product-image">
+		  </div>
+		</div>
+		<div class="col-md-8">
+		  <div class="card-body">
+			<h2>{{product.price | currency}}</h2>
+			<p class="card-text">{{product.description}}</p>
+			<p class="card-text">Materiaali: {{product.mainmaterial}}</p>
+			<p class="card-text">Varastossa: {{product.varastossa}}</p>
 			<button class="ostabutton" (click)="addToCart(product)">Osta</button>
-			<p><a routerLink="/shipping">Toimitusmaksut</a></p></small></p>
+			<p><a routerLink="/shipping">Toimitusmaksut</a></p>
+		  </div>
 		</div>
 	  </div>
 	</div>
-  </div>
-</section>
+  </section>

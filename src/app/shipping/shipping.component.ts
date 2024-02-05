@@ -17,7 +17,7 @@ export class ShippingComponent implements OnInit {
   shippingCosts!: Observable<{ type: string, price: number }[]>;
 
   ngOnInit(): void {
-    this.shippingCosts =  this.cartService.getShippingPrices();
+   this.shippingCosts =  this.cartService.getShippingPrices();
   }
 
 }
