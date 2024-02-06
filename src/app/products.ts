@@ -46,7 +46,7 @@ export const products = [
     name: 'Bat Phone',
     price: 99.99,
     description: 'Description for the new bat phone. Iso näyttö ja tehokas akku.',
-    images: ['/assets/kuvat/pieni-iphone-x.png'],
+    images: ['/assets/kuvat/pieni-iphone-7.png'],
     mainmaterial: "glass",
     os: "OS version Unknown",
     varastossa: true

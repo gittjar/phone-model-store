@@ -17,6 +17,7 @@ import { ShippingComponent } from './shipping/shipping.component';
 
 import { MatIconModule } from '@angular/material/icon';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
+import { FooterComponent } from './footer/footer.component';
 
 
 
@@ -55,7 +56,8 @@ import {MatSnackBarModule} from '@angular/material/snack-bar';
     ProductListComponent,
     ProductDetailsComponent,
     CartComponent,
-    ShippingComponent
+    ShippingComponent,
+    FooterComponent
    ],
   
   

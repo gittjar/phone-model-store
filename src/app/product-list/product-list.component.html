@@ -15,10 +15,8 @@
       <a [routerLink]="['/products', product.id]">{{ product.id }} - {{ product.name }}</a>
     </h3>    
     
-    <figure>
-      <div class="carousel-item active">
-        <img [src]="product.images[0]" class="card-img-top">
-      </div>
+    <figure class="card-img-top">
+        <img [src]="product.images[0]">
     </figure>
     <div class="card-body">
       <p class="card-text">{{ product.description }}</p>
@@ -27,7 +25,7 @@
       <p class="card-text"><small class="text-muted">{{ product.mainmaterial }}</small></p>
       <b class="card-text">{{ product.price | currency }}</b>
       <hr />
-      <div class="d-flex justify-content-between">
+      <div class="somekuvake">
         <i class="fab fa-facebook" (click)="shareSome()"></i>        
         <i class="fab fa-google" (click)="shareSome()"></i>
         <i class="fab fa-tiktok" (click)="shareSome()"></i>
