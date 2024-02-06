@@ -173,7 +173,7 @@ figure img {
 
 
 
-.ostabutton, .tuoteloppu {
+.ostabutton {
   border: none;
   color: white;
   padding: 15px 15px;
@@ -188,8 +188,28 @@ figure img {
   box-shadow: 0 1px 5px rgba(0,0,0,0.4);
   width: 10rem;
   background-color: #9105bf; 
+} 
 
+.backbutton {
+  border: none;
+  color: white;
+  padding: 15px 15px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 13px;
+  margin: 4px 4px;
+  cursor: pointer;
+  transition: all 0.3s ease 0s;
+  border-radius: 3px;
+  box-shadow: 0 1px 5px rgba(0,0,0,0.4);
+  width: 10rem;
+  background-color: #8b7caf; 
 }
+
+.backbutton:hover, .ostabutton:hover {
+  opacity: 0.8;
+} 
 
 
 
@@ -243,6 +263,7 @@ figure img {
 
   h1 {
     font-size: 1.5rem;
+    color: #000;
   }
 
   figure img {
@@ -276,7 +297,7 @@ figure img {
     font-size: 1.2em;
   }
 
-  .ostabutton, .tuoteloppu {
+  .ostabutton, .backbutton {
     padding: 10px 10px;
     font-size: 12px;
     margin: 2px 2px;
@@ -327,6 +348,7 @@ figure img {
   h1 {
     font-size: 2rem;
     padding-left: 14px;
+    color: #000;
   }
 
   .kortit {

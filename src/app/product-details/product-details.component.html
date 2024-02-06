@@ -1,25 +1,31 @@
-<section *ngIf="product">
-	<div class="card">
-	  <div class="prod-details-head">
-		<h1 class="flexgrow9">{{product.name}}</h1>
-		<button type="button" class="backbutton" (click)="goBack()"><i class="material-icons">close</i></button>
-	  </div>
-	  <div class="row">
-		<div class="col-md-4">
-		  <div *ngFor="let image of product.images">
-			<img [src]="image" class="product-image">
-		  </div>
-		</div>
-		<div class="col-md-8">
-		  <div class="card-body">
-			<h2>{{product.price | currency}}</h2>
-			<p class="card-text">{{product.description}}</p>
-			<p class="card-text">Materiaali: {{product.mainmaterial}}</p>
-			<p class="card-text">Varastossa: {{product.varastossa}}</p>
-			<button class="ostabutton" (click)="addToCart(product)">Osta</button>
-			<p><a routerLink="/shipping">Toimitusmaksut</a></p>
-		  </div>
-		</div>
-	  </div>
+<section class="container">
+
+  <div class="card mb-3" *ngIf="product" style="max-width: 32rem;">
+	
+		
+		<h1>{{product.name}}</h1>
+		<hr>
+
+	
+
+
+	<figure *ngFor="let image of product.images">
+		<img [src]="image" class="card-img-top">
+	  </figure>
+	<div class="card-body">
+	  <h5 class="card-title">Here can be text more .. !</h5>
+	  <p class="card-text">{{product.description}}</p>
+	  <p class="card-text">Materiaali: {{product.mainmaterial}}</p>
+	  <p class="card-text"><small class="text-body-secondary">Varastossa: {{product.varastossa ? 'kyllä' : 'ei'}}</small></p>	  <p class="card-text"><a routerLink="/shipping">Toimitusmaksut</a></p>
+	  <h2>{{product.price | currency}}</h2>
+
+	  <button class="ostabutton" (click)="addToCart(product)">Osta <i class="bi bi-bag-plus"></i></button>
+	  <br>
+	  <button class="backbutton" (click)="goBack()">Takaisin <i class="bi bi-x-lg"></i></button>
+
+	
+
+
 	</div>
-  </section>
+  </div>
+</section>
