@@ -49,6 +49,10 @@ export class CartComponent implements OnInit, OnDestroy {
       panelClass: ['center-snackbar']
     });
   }
+  removeItem(item: Product): void {
+    this.cartService.removeItem(item);
+    this.totalPrice = this.cartService.getTotalPrice();
+  }
 
 
 }

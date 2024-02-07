@@ -9,6 +9,7 @@ export class CartService {
   items: Product[] = [];
   cartItemCount = new BehaviorSubject<number>(0);
   quantity: number = 0;
+  totalPrice: number = 0;
 
   addToCart(product: Product) {
     let item = this.items.find(item => item.id === product.id);
@@ -39,13 +40,16 @@ export class CartService {
     this.updateItemCount();
   }
 
-  removeItem(product: Product) {
-    const index = this.items.findIndex(item => item.id === product.id);
+  removeItem(item: Product) {
+    const index = this.items.indexOf(item);
     if (index > -1) {
       this.items.splice(index, 1);
+      this.cartItemCount.next(this.items.length);
+      this.totalPrice -= item.price;
     }
-    this.updateItemCount();
   }
+
+
 
   getItems() {
     return this.items;
