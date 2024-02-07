@@ -15,7 +15,7 @@ export const products = [
     id: 1,
     name: 'Samsung Flip 7',
     price: 49.95,
-    description: '"Flippiseiska" suurella näytöllä, 5G nettinopeus ja tehokas akku. ',
+    description: 'Flip seven suurella näytöllä, 5G nettinopeus ja tehokas akku. Android 11x käyttöjärjestelmä.',
     images: ['/assets/kuvat/pieni-samsung.png'],
     mainmaterial: "titanium",
     os: "Android 4x",
@@ -23,9 +23,9 @@ export const products = [
   },
   {
     id: 2,
-    name: 'iPhone X',
+    name: 'Apple iPhone X',
     price: 129.99,
-    description: 'iPhone X huippupuhelin. Omenaperheen uusin kärkituote.',
+    description: 'iPhone X huippupuhelin. 5G, 128 Gt tallennustilaa ja 36 Mpx kamera. Pitkä akunkesto.',
     images: ['/assets/kuvat/pieni-iphone-x.png'],
     mainmaterial: "aluminium",
     os: "iOS 15x",
@@ -33,9 +33,9 @@ export const products = [
   },
   {
     id: 3,
-    name: 'iPhone 7',
+    name: 'Apple iPhone 7',
     price: 89.99,
-    description: 'Pieni iPhone 7 luotettava peruspuhelin, jossa toimii kaikki.',
+    description: 'Pieni iPhone 7 luotettava peruspuhelin, jossa toimii kaikki. Hyvä valinta monenlaiseen käyttöön.',
     images: ['/assets/kuvat/pieni-iphone-7.png'],
     mainmaterial: "aluminium",
     os: "iOS 15x",
@@ -43,12 +43,12 @@ export const products = [
   },
   {
     id: 4,
-    name: 'Bat Phone',
-    price: 99.99,
-    description: 'Description for the new bat phone. Iso näyttö ja tehokas akku.',
-    images: ['/assets/kuvat/pieni-iphone-7.png'],
-    mainmaterial: "glass",
-    os: "OS version Unknown",
+    name: 'Apple iPhone 15',
+    price: 799.99,
+    description: '48 Mpx pääkamera Photonic-moottorilla, tehokkas A16 Bionic-prosessori ja 5G-datayhteys.',
+    images: ['/assets/kuvat/Apple-iPhone-15.jpg'],
+    mainmaterial: "aluminium",
+    os: "OS version Latest",
     varastossa: true
   }
 ];
