@@ -24,7 +24,12 @@ export class CartComponent implements OnInit, OnDestroy {
     private snackBar: MatSnackBar
   ) { }
   ngOnInit(): void {
-    throw new Error('Method not implemented.');
+    this.checkoutForm = this.formBuilder.group({
+      name: '',
+      address: ''
+    });
+
+    this.itemCountSubscription = this.cartService.cartItemCount.subscribe(count => this.itemCount = count);
   }
 
   ngOnDestroy() {
@@ -45,11 +50,5 @@ export class CartComponent implements OnInit, OnDestroy {
     });
   }
 
-  increaseItem(item: Product): void {
-    this.cartService.increaseItem(item);
-  }
 
-  decreaseItem(item: Product): void {
-    this.cartService.decreaseItem(item);
-  }
 }

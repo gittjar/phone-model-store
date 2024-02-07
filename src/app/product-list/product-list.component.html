@@ -11,9 +11,11 @@
 
 <section class="kortit">
   <article class="card" *ngFor="let product of products">
+    <div class="card-header mb-3">
     <h3 class="card-title">
       <a [routerLink]="['/products', product.id]">{{ product.name }} <i class="bi bi-arrow-right-short"></i></a>
-    </h3>    
+    </h3>   
+    </div>
     
     <figure class="card-img-top">
         <img [src]="product.images[0]">

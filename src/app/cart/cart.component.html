@@ -1,4 +1,4 @@
-<section class="ostoskori">
+<section class="cart-page">
 
     <!-- Display a message after submitting the form 
     <div *ngIf="orderSubmitted">
@@ -11,29 +11,37 @@
     <a routerLink="/shipping">Toimitusmaksut</a>
   </p>
 
-  <div class="cart-item" *ngFor="let item of items">
-    <span>{{ item.name }}</span>
-    <span>{{ item.price | currency }}</span>
-    <span>Quantity: {{ item.quantity }}</span>
-    <button (click)="decreaseItem(item)">Decrease</button>
-    <button (click)="increaseItem(item)">Increase</button>
-  </div>
-  <p>Yhteensä: {{ totalPrice }} €</p>
+
+  <ul class="list-group mb-3" style="max-width: 42rem;">
+    <li class="list-group-item d-flex justify-content-between align-items-center" *ngFor="let item of items">
+      {{ item.name }}      
+      <span class="badge bg-primary rounded-pill">{{ item.price | currency }} €</span>
+    </li>
+    <li class="list-group-item d-flex justify-content-between align-items-center">
+      Yhteensä
+      <span class="badge bg-dark rounded-pill">{{ totalPrice | number:'1.2-2' }} €</span>
+    </li>
+  </ul>
+
+
+
 
   <form [formGroup]="checkoutForm" (ngSubmit)="onSubmit()">
-    <div>
-      <label for="name">Nimi</label>
-      <input id="name" type="text" formControlName="name">
+ 
+    <div class="input-group mb-2" style="max-width: 32rem;">
+      <span class="input-group-text" id="basic-addon1">Nimi</span>
+      <input type="text" class="form-control" placeholder="Etunimi ja Sukunimi" aria-label="Username" aria-describedby="basic-addon1">
     </div>
 
-    <div>
-      <label for="address">Osoite</label>
-      <input id="address" type="text" formControlName="address">
+    <div class="input-group mb-2" style="max-width: 32rem;">
+      <span class="input-group-text" id="basic-addon1">Osoite</span>
+      <input type="text" class="form-control" placeholder="Osoite" aria-label="Username" aria-describedby="basic-addon1">
     </div>
+  
     <br>
-    <button class="button" type="submit">Tilaa</button>
-    <br><hr>
-    <button class="button" routerLink="/">Takaisin kauppaan</button>
+    <button class="ostabutton" type="submit">Tilaa <i class="bi bi-check-square"></i></button>
+    <br>
+    <button class="backbutton" routerLink="/">Takaisin <i class="bi bi-x-lg"></i></button>
   </form>
 
 

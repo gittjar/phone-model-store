@@ -73,6 +73,8 @@ app-top-bar {
   justify-content: space-between;
   align-items: center;
   border-bottom: #900486 3px solid;
+  opacity: 0.85; 
+
 }
 
 .ostoskarry {
@@ -124,10 +126,8 @@ app-top-bar {
 }
 
 .card {
- 
-  border: #900486 1px solid;
   margin: 10px;
-  padding: 10px;
+  border: #900486 1px solid;
   border-radius: 10px;
   background-color: #f5f5f5;
   box-shadow: 5px 5px 5px #900486;  
@@ -221,6 +221,7 @@ figure img {
   font-size: 2rem;
   border-radius: 5px;
   color: #9105bf;
+  cursor: pointer;
 }
 
 .center-snackbar {
@@ -229,6 +230,14 @@ figure img {
   left: 50%;
   transform: translate(-50%, -50%);
 }
+
+.cart-page, .toimituskulut
+{
+  margin-left: 1%;
+  margin-top: 10px;
+}
+
+
 
 
 
@@ -246,6 +255,11 @@ figure img {
 
   .ostoskarry {
     font-size: 1.8rem;
+    margin-right: 10px;
+  }
+
+  .basketitems {
+    font-size: 0.6rem;
   }
 
   .siteHeader {
@@ -254,6 +268,7 @@ figure img {
 
   .siteHeader .siteLogo{
     margin: -50px;
+
   }
 
   .overlay-text {
@@ -262,8 +277,9 @@ figure img {
   }
 
   h1 {
-    font-size: 1.5rem;
+    font-size: 1rem;
     color: #000;
+    margin-left: 10px;
   }
 
   figure img {
