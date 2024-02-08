@@ -7,7 +7,7 @@ export interface Product {
   mainmaterial: string;
   os: string;
   varastossa: boolean;
-  quantity?: number; // Add this line
+  quantity?: number;
 }
 
 export const products = [
@@ -15,10 +15,10 @@ export const products = [
     id: 1,
     name: 'Samsung Flip 7',
     price: 49.95,
-    description: 'Flip seven suurella näytöllä, 5G nettinopeus ja tehokas akku. Android 11x käyttöjärjestelmä.',
+    description: 'Flip seven suurella näytöllä, 5G nettinopeus ja tehokas akku. Android 14 käyttöjärjestelmä.',
     images: ['/assets/kuvat/pieni-samsung.png'],
     mainmaterial: "titanium",
-    os: "Android 4x",
+    os: "Android 14 (Oct. 2023)",
     varastossa: true
   },
   {
@@ -48,7 +48,7 @@ export const products = [
     description: '48 Mpx pääkamera Photonic-moottorilla, tehokkas A16 Bionic-prosessori ja 5G-datayhteys.',
     images: ['/assets/kuvat/Apple-iPhone-15.jpg'],
     mainmaterial: "aluminium",
-    os: "OS version Latest",
+    os: "iOS version Latest",
     varastossa: true
   }
 ];

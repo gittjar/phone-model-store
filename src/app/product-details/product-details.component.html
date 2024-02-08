@@ -14,7 +14,7 @@
 		<img [src]="image" class="card-img-top">
 	  </figure>
 	<div class="card-body">
-	  <h5 class="card-title">Here can be text more .. !</h5>
+	  <h5 class="card-title">{{product.name}}</h5>
 	  <p class="card-text">{{product.description}}</p>
 	  <p class="card-text">Materiaali: {{product.mainmaterial}}</p>
 	  <p class="card-text"><small class="text-body-secondary">Varastossa: {{product.varastossa ? 'kyllä' : 'ei'}}</small></p>	  <p class="card-text"><a routerLink="/shipping">Toimitusmaksut</a></p>

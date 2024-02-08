@@ -12,14 +12,10 @@ export class CartService {
   totalPrice: number = 0;
 
   addToCart(product: Product) {
-    let item = this.items.find(item => item.id === product.id);
-    if (item) {
-      item.quantity = item.quantity ?? 0;
-      item.quantity++;
-    } else {
-      product.quantity = 1;
-      this.items.push(product);
-    }
+    // Clone the product to create a new instance
+    let productClone = { ...product, quantity: 1 };
+    // Add the new instance to the cart
+    this.items.push(productClone);
     this.updateItemCount();
   }
 
