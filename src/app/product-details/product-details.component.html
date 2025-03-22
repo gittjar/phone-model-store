@@ -1,11 +1,11 @@
-<section class="container">
-	<div class="card" *ngIf="product" style="max-width: 32rem;">
-	  <div class="card-header mb-3">
-		<h1>{{product.name}}</h1>
+<section class="container mt-5 mb-4">
+	<div class="card border-dark shadow-lg" *ngIf="product" style="max-width: 32rem; margin: auto;">
+	  <div class="card-header bg-dark mb-3">
+		<h1 class="h4 text-white">{{product.name}}</h1>
 	  </div>
   
-	  <figure *ngFor="let image of product.images">
-		<img [src]="image" class="card-img-top">
+	  <figure *ngFor="let image of product.images" class="mb-3">
+		<img [src]="image" class="card-img-top rounded">
 	  </figure>
 	  <div class="card-body">
 		<h5 class="card-title">{{product.name}}</h5>
@@ -13,18 +13,17 @@
 		<p class="card-text">Materiaali: {{product.mainmaterial}}</p>
 		<p class="card-text"><small class="text-body-secondary">Varastossa: {{product.varastossa ? 'kyllä' : 'ei'}}</small></p>
 		<p class="card-text"><a routerLink="/shipping">Toimitusmaksut</a></p>
-		<h2>{{product.price | currency}}</h2>
+		<h2 class="text-primary">{{product.price | currency}}</h2>
   
-		<label for="quantity">Määrä:</label>
+		<label for="quantity" class="form-label">Määrä:</label>
 		<div class="input-group mb-3 w-50">
 		  <button class="btn btn-outline-secondary" type="button" (click)="decreaseQuantity()">-</button>
 		  <input id="quantity" type="number" [value]="quantity" (input)="updateQuantity($event)" min="0" class="form-control text-center" />
 		  <button class="btn btn-outline-secondary" type="button" (click)="increaseQuantity()">+</button>
 		</div>
   
-		<button *ngIf="product.varastossa" class="ostabutton" (click)="addToCart(product)">Osta <i class="bi bi-bag-plus"></i></button>
-		<p *ngIf="!product.varastossa" class="text-danger">Out of stock</p>
-		<br>
+		<button *ngIf="product.varastossa" class="ostabutton mb-2" (click)="addToCart(product)">Osta <i class="bi bi-bag-plus"></i></button>
+		<p *ngIf="!product.varastossa" class="text-danger text-center">Out of stock</p>
 		<button class="backbutton" (click)="goBack()">Takaisin <i class="bi bi-x-lg"></i></button>
 	  </div>
 	</div>

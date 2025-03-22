@@ -144,6 +144,14 @@ app-top-bar {
   box-shadow: 5px 5px 5px #900486;  
 }
 
+.cartcard {
+  margin: 10px;
+  border: #3604ff 1px solid;
+  border-radius: 10px;
+  background-color: #ffffff;
+  padding: 10px;
+}
+
 
 
 .productname {

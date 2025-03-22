@@ -20,7 +20,7 @@ export class ProductListComponent {
   cardSRed: string = '#E72203';
 
   constructor(private cartService: CartService, private _snackBar: MatSnackBar) { 
-    this.cartService.cartItemCount.subscribe((count: number | undefined) => this.cartItemCount = count);
+    this.cartService.cartItemCount$.subscribe((count: number | undefined) => this.cartItemCount = count);
   }
 
   share() {

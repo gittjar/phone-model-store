@@ -6,4 +6,4 @@
 - Add product to cart
 - Shipping prices
 
-https://angular.io/start
+https://angular.dev/

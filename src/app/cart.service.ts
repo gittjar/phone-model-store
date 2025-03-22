@@ -1,81 +1,66 @@
 import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { Observable, BehaviorSubject } from 'rxjs';
 import { Product } from './products';
-import { BehaviorSubject, of } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class CartService {
-  removeFromCart(product: Product) {
-    throw new Error('Method not implemented.');
-  }
-  items: Product[] = [];
-  cartItemCount = new BehaviorSubject<number>(0);
-  quantity: number = 0;
-  totalPrice: number = 0;
+  private items: Product[] = [];
+  private cartItemCount = new BehaviorSubject<number>(0);
+  private totalPrice = new BehaviorSubject<number>(0);
 
-  addToCart(product: Product) {
-    // Clone the product to create a new instance
-    let productClone = { ...product, quantity: 1 };
-    // Add the new instance to the cart
-    this.items.push(productClone);
-    this.updateItemCount();
-  }
+  cartItemCount$ = this.cartItemCount.asObservable();
+  totalPrice$ = this.totalPrice.asObservable();
 
-  increaseItem(product: Product) {
-    let item = this.items.find(item => item.id === product.id);
-    if (item) {
-      item.quantity = item.quantity ?? 0;
-      item.quantity++;
+  constructor(private http: HttpClient) {}
+
+  addToCart(product: Product, quantity: number = 1) {
+    const existingProduct = this.items.find(item => item.id === product.id);
+    if (existingProduct) {
+      if (existingProduct.quantity) {
+        existingProduct.quantity += quantity;
+      } else {
+        existingProduct.quantity = quantity;
+      }
+    } else {
+      product.quantity = quantity;
+      this.items.push(product);
     }
-    this.updateItemCount();
+    this.updateCart();
   }
 
-  decreaseItem(product: Product) {
-    let item = this.items.find(item => item.id === product.id);
-    if (item && item.quantity && item.quantity > 1) {
-      item.quantity--;
+  removeFromCart(product: Product, quantity: number = 1) {
+    const existingProduct = this.items.find(item => item.id === product.id);
+    if (existingProduct) {
+      if (existingProduct.quantity) {
+        existingProduct.quantity -= quantity;
+        if (existingProduct.quantity <= 0) {
+          this.items = this.items.filter(item => item.id !== product.id);
+        }
+      }
     }
-    this.updateItemCount();
+    this.updateCart();
   }
 
-  removeItem(item: Product) {
-    const index = this.items.indexOf(item);
-    if (index > -1) {
-      this.items.splice(index, 1);
-      this.cartItemCount.next(this.items.length);
-      this.totalPrice -= item.price;
-    }
-  }
-
-
-
-  getItems() {
+  getItems(): Product[] {
     return this.items;
-  }
-
-  getShippingPrices() {
-    return of([
-      { type: 'Standard', price: 5 },
-      { type: 'Express', price: 10 },
-      { type: 'Overnight', price: 25 },
-      { type: 'International', price: 40},
-      { type: 'Free', price: 0},
-      { type: 'Pickup', price: 0}
-    ]);
   }
 
   clearCart() {
     this.items = [];
-    this.updateItemCount();
-    return this.items;
+    this.updateCart();
   }
 
-  getTotalPrice() {
-    return this.items.reduce((total, item) => total + (item.price * (item.quantity || 0)), 0);
+  getShippingPrices(): Observable<any> {
+    return this.http.get('/assets/shipping.json');
   }
 
-  private updateItemCount() {
-    this.cartItemCount.next(this.items.reduce((count, item) => count + (item.quantity || 0), 0));
+  private updateCart() {
+    const itemCount = this.items.reduce((count, item) => count + (item.quantity ?? 0), 0);
+    const totalPrice = this.items.reduce((total, item) => total + (item.price * (item.quantity ?? 0)), 0);
+    this.cartItemCount.next(itemCount);
+    this.totalPrice.next(totalPrice);
   }
 }

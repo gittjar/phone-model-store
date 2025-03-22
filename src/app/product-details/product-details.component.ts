@@ -12,7 +12,7 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 })
 export class ProductDetailsComponent implements OnInit {
   product: Product | undefined;
-  quantity: number = 1; // Add quantity property
+  quantity: number = 1;
 
   constructor(
     private route: ActivatedRoute, 
@@ -34,16 +34,8 @@ export class ProductDetailsComponent implements OnInit {
 
   addToCart(product: Product) {
     if (this.quantity > 0) {
-      for (let i = 0; i < this.quantity; i++) {
-        this.cartService.addToCart(product);
-      }
+      this.cartService.addToCart(product, this.quantity);
       this._snackBar.open(`${product.name} lisätty ostoskoriin! Määrä: ${this.quantity}`, 'Sulje', {
-        duration: 3000,
-        panelClass: ['center-snackbar']
-      });
-    } else {
-      this.cartService.removeFromCart(product);
-      this._snackBar.open(`${product.name} poistettu ostoskorista!`, 'Sulje', {
         duration: 3000,
         panelClass: ['center-snackbar']
       });
