@@ -1,32 +1,30 @@
 <section class="container">
-
-  <div class="card" *ngIf="product" style="max-width: 32rem;">
-	
-	<div class="card-header mb-3">
+	<div class="card" *ngIf="product" style="max-width: 32rem;">
+	  <div class="card-header mb-3">
 		<h1>{{product.name}}</h1>
-	</div>
-		
-
-	
-
-
-	<figure *ngFor="let image of product.images">
+	  </div>
+  
+	  <figure *ngFor="let image of product.images">
 		<img [src]="image" class="card-img-top">
 	  </figure>
-	<div class="card-body">
-	  <h5 class="card-title">{{product.name}}</h5>
-	  <p class="card-text">{{product.description}}</p>
-	  <p class="card-text">Materiaali: {{product.mainmaterial}}</p>
-	  <p class="card-text"><small class="text-body-secondary">Varastossa: {{product.varastossa ? 'kyllä' : 'ei'}}</small></p>	  <p class="card-text"><a routerLink="/shipping">Toimitusmaksut</a></p>
-	  <h2>{{product.price | currency}}</h2>
-
-	  <button class="ostabutton" (click)="addToCart(product)">Osta <i class="bi bi-bag-plus"></i></button>
-	  <br>
-	  <button class="backbutton" (click)="goBack()">Takaisin <i class="bi bi-x-lg"></i></button>
-
-	
-
-
+	  <div class="card-body">
+		<h5 class="card-title">{{product.name}}</h5>
+		<p class="card-text">{{product.description}}</p>
+		<p class="card-text">Materiaali: {{product.mainmaterial}}</p>
+		<p class="card-text"><small class="text-body-secondary">Varastossa: {{product.varastossa ? 'kyllä' : 'ei'}}</small></p>
+		<p class="card-text"><a routerLink="/shipping">Toimitusmaksut</a></p>
+		<h2>{{product.price | currency}}</h2>
+  
+		<label for="quantity">Määrä:</label>
+		<div class="input-group mb-3 w-50">
+		  <button class="btn btn-outline-secondary" type="button" (click)="decreaseQuantity()">-</button>
+		  <input id="quantity" type="number" [value]="quantity" (input)="updateQuantity($event)" min="0" class="form-control text-center" />
+		  <button class="btn btn-outline-secondary" type="button" (click)="increaseQuantity()">+</button>
+		</div>
+  
+		<button class="ostabutton" (click)="addToCart(product)">Osta <i class="bi bi-bag-plus"></i></button>
+		<br>
+		<button class="backbutton" (click)="goBack()">Takaisin <i class="bi bi-x-lg"></i></button>
+	  </div>
 	</div>
-  </div>
-</section>
+  </section>

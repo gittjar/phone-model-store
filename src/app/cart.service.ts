@@ -6,6 +6,9 @@ import { BehaviorSubject, of } from 'rxjs';
   providedIn: 'root'
 })
 export class CartService {
+  removeFromCart(product: Product) {
+    throw new Error('Method not implemented.');
+  }
   items: Product[] = [];
   cartItemCount = new BehaviorSubject<number>(0);
   quantity: number = 0;
