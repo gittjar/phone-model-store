@@ -37,13 +37,13 @@ export class ProductDetailsComponent implements OnInit {
       for (let i = 0; i < this.quantity; i++) {
         this.cartService.addToCart(product);
       }
-      this._snackBar.open('Tuote on nyt lisatty ostoskoriin!', 'Sulje', {
+      this._snackBar.open(`${product.name} lisätty ostoskoriin! Määrä: ${this.quantity}`, 'Sulje', {
         duration: 3000,
         panelClass: ['center-snackbar']
       });
     } else {
       this.cartService.removeFromCart(product);
-      this._snackBar.open('Tuote on poistettu ostoskorista!', 'Sulje', {
+      this._snackBar.open(`${product.name} poistettu ostoskorista!`, 'Sulje', {
         duration: 3000,
         panelClass: ['center-snackbar']
       });

@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { products } from '../products';
 import { CartService } from '../cart.service';
 import { Product } from '../products';
-import {MatSnackBar} from '@angular/material/snack-bar';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-product-list',
@@ -36,7 +36,7 @@ export class ProductListComponent {
 
   addToCart(product: Product) {
     this.cartService.addToCart(product);
-    this._snackBar.open('Tuote lisätty ostoskoriin!', 'Ok',{
+    this._snackBar.open(`${product.name} lisätty ostoskoriin!`, 'Ok', {
       duration: 3000,
       panelClass: ['center-snackbar']
     });

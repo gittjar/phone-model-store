@@ -50,6 +50,45 @@ export const products = [
     mainmaterial: "aluminium",
     os: "iOS version Latest",
     varastossa: true
+  },
+  {
+    id: 5,
+    name: 'Apple iPhone 7 Silver',
+    price: 99.99,
+    description: 'Hopeinen iPhone 7, jossa on 32 Gt tallennustilaa ja 12 Mpx kamera. Erinomainen valinta.',
+    images: ['/assets/kuvat/Apple-iPhone-15.jpg'],
+    mainmaterial: "aluminium",
+    os: "iOS 15x",
+    varastossa: true
+  },
+  {
+    id: 6,
+    name: 'Apple iPhone XS',
+    price: 199.99,
+    description: 'iPhone XS, jossa on 64 Gt tallennustilaa ja 12 Mpx kaksoiskamera. Erinomainen suorituskyky.',
+    images: ['/assets/kuvat/pieni-iphone-7.png'],
+    mainmaterial: "aluminium",
+    os: "iOS 15x",
+    varastossa: true
+  },
+  {
+    id: 7,
+    name: 'Generic Phone',
+    price: 59.99,
+    description: 'Edullinen peruspuhelin, jossa on 16 Gt tallennustilaa ja 8 Mpx kamera. Hyvä valinta peruskäyttöön.',
+    images: ['/assets/kuvat/pieni-samsung.png'],
+    mainmaterial: "plastic",
+    os: "Android 10",
+    varastossa: true
+  },
+  {
+    id: 8,
+    name: 'Apple iPhone 7 32GB',
+    price: 79.99,
+    description: 'iPhone 7, jossa on 32 Gt tallennustilaa ja 12 Mpx kamera. Luotettava ja kestävä puhelin.',
+    images: ['/assets/kuvat/pieni-iphone-x.png'],
+    mainmaterial: "aluminium",
+    os: "iOS 15x",
+    varastossa: false
   }
 ];
-

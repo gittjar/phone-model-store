@@ -192,7 +192,7 @@ figure img {
   margin: 4px 4px;
   cursor: pointer;
   transition: all 0.3s ease 0s;
-  border-radius: 3px;
+  border-radius: 8px;
   box-shadow: 0 1px 5px rgba(0,0,0,0.4);
   width: 10rem;
   background-color: #9105bf; 
@@ -209,10 +209,10 @@ figure img {
   margin: 4px 4px;
   cursor: pointer;
   transition: all 0.3s ease 0s;
-  border-radius: 3px;
+  border-radius: 8px;
   box-shadow: 0 1px 5px rgba(0,0,0,0.4);
   width: 10rem;
-  background-color: #8b7caf; 
+  background-color: #8f8f8f; 
 }
 
 .backbutton:hover, .ostabutton:hover {
