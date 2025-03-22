@@ -22,7 +22,8 @@
 		  <button class="btn btn-outline-secondary" type="button" (click)="increaseQuantity()">+</button>
 		</div>
   
-		<button class="ostabutton" (click)="addToCart(product)">Osta <i class="bi bi-bag-plus"></i></button>
+		<button *ngIf="product.varastossa" class="ostabutton" (click)="addToCart(product)">Osta <i class="bi bi-bag-plus"></i></button>
+		<p *ngIf="!product.varastossa" class="text-danger">Out of stock</p>
 		<br>
 		<button class="backbutton" (click)="goBack()">Takaisin <i class="bi bi-x-lg"></i></button>
 	  </div>

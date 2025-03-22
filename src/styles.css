@@ -121,6 +121,9 @@ app-top-bar {
   color: rgb(199, 6, 163);
   font-size: 5rem;
   font-weight: 700;
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 20px;
 }
 
 .siteHeader .siteLogo{
@@ -171,6 +174,20 @@ figure img {
 .card-text {
   font-size: 0.9rem;
   margin-bottom: 10px;
+}
+
+.card-text.rounded {
+  background-color: #f8f9fa; /* Light background color */
+  padding: 10px; /* Space inside the element */
+  margin: 10px 0; /* Space outside the element */
+  border-radius: 5px; /* Rounded corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Box shadow */
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1); /* Text shadow */
+  transition: transform 0.2s; /* Smooth transition for hover effect */
+}
+
+.card-text.rounded:hover {
+  transform: scale(1.05); /* Slightly enlarge on hover */
 }
 
 .bi, .bix {

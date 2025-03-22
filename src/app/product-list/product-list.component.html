@@ -3,25 +3,23 @@
 </head>
 
 <header class="siteHeader">
-  <img src="../../assets/kuvat/iso-iphone-xs.jpg" class="siteLogo" />
+  <img src="../../assets/kuvat/PHONE_004.WEBP" class="siteLogo" />
   <h1 class="overlay-text">Our phone models</h1>
-
-
 </header>
 
 <section class="kortit">
   <article class="card" *ngFor="let product of products">
     <div class="card-header mb-3">
-    <h3 class="card-title">
-      <a [routerLink]="['/products', product.id]">{{ product.name }} <i class="bi bi-arrow-right-short"></i></a>
-    </h3>   
+      <h3 class="card-title">
+        <a [routerLink]="['/products', product.id]">{{ product.name }} <i class="bi bi-arrow-right-short"></i></a>
+      </h3>   
     </div>
     
     <figure class="card-img-top">
-        <img [src]="product.images[0]">
+      <img [src]="product.images[0]">
     </figure>
     <div class="card-body">
-      <p class="card-text">{{ product.description }}</p>
+      <p class="card-text rounded">{{ product.description }}</p>
       <hr />
       <p class="card-text">{{ product.os }}</p>
       <p class="card-text"><small class="text-muted">{{ product.mainmaterial }}</small></p>
@@ -33,7 +31,8 @@
         <i class="fab fa-tiktok" (click)="shareSome()"></i>
         <i class="fab fa-twitch" (click)="shareSome()"></i>
       </div>
-      <button (click)="addToCart(product)" class="ostabutton">Osta <i class="bi bi-bag-plus"></i></button>
+      <button *ngIf="product.varastossa" (click)="addToCart(product)" class="ostabutton">Osta <i class="bi bi-bag-plus"></i></button>
+      <p *ngIf="!product.varastossa" class="text-danger">Out of stock</p>
     </div>
   </article>
 </section>

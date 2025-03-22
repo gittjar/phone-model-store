@@ -1,17 +1,11 @@
-
 <a [routerLink]="['/']">
-  <h1>Phone Model Store
-  </h1>
+  <h1>Discover the Best Smartphones</h1>
 </a>
 <br>
 
 <span class="kassabutton">
-<a routerLink="/cart">
-  <span class="basketitems">{{cartItemCount}}</span>
-  <i class="bi bi-cart ostoskarry"></i>
-
-
-</a>
-
-
+  <a routerLink="/cart">
+    <span *ngIf="cartItemCount && cartItemCount > 0" class="basketitems">{{cartItemCount}}</span>
+    <i class="bi bi-basket ostoskarry"></i>
+  </a>
 </span>
