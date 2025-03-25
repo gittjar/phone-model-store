@@ -1,8 +1,10 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { Subscription } from 'rxjs';
+import { MatDialog } from '@angular/material/dialog';
 import { CartService } from '../cart.service';
 import { Product } from '../products';
+import { ConfirmDialogComponent } from '../confirm-dialog/confirm-dialog.component';
 
 @Component({
   selector: 'app-cart',
@@ -19,7 +21,8 @@ export class CartComponent implements OnInit, OnDestroy {
 
   constructor(
     private cartService: CartService,
-    private formBuilder: FormBuilder
+    private formBuilder: FormBuilder,
+    public dialog: MatDialog
   ) {}
 
   ngOnInit() {
@@ -44,7 +47,25 @@ export class CartComponent implements OnInit, OnDestroy {
   }
 
   decreaseQuantity(item: Product) {
-    this.cartService.removeFromCart(item);
+    const currentQuantity = this.cartService.getItemQuantity(item);
+    if (currentQuantity > 1) {
+      this.cartService.removeFromCart(item);
+    } else {
+      const dialogRef = this.dialog.open(ConfirmDialogComponent, {
+        width: '250px',
+        data: { item },
+        disableClose: true,
+        hasBackdrop: true,
+        panelClass: 'confirm-dialog-center'
+      });
+
+      dialogRef.afterClosed().subscribe(result => {
+        if (result) {
+          this.cartService.removeFromCart(item);
+          this.items = this.cartService.getItems(); // Refresh the cart items
+        }
+      });
+    }
   }
 
   onSubmit(): void {

@@ -3,6 +3,10 @@ import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule } from '@angular/router';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { MatDialogModule } from '@angular/material/dialog';
+import { MatButtonModule } from '@angular/material/button';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
 
 import { AppComponent } from './app.component';
 import { TopBarComponent } from './top-bar/top-bar.component';
@@ -18,9 +22,7 @@ import { ShippingComponent } from './shipping/shipping.component';
 import { MatIconModule } from '@angular/material/icon';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
 import { FooterComponent } from './footer/footer.component';
-
-
-
+import { ConfirmDialogComponent } from './confirm-dialog/confirm-dialog.component';
 
 
 
@@ -32,6 +34,9 @@ import { FooterComponent } from './footer/footer.component';
     MatSnackBarModule,
     AngularImageViewerModule,
     MatIconModule,
+    MatDialogModule,
+    MatButtonModule,
+    BrowserAnimationsModule,
 //    NgSelectModule,
 //    FormsModule,
     RouterModule.forRoot([
@@ -57,7 +62,8 @@ import { FooterComponent } from './footer/footer.component';
     ProductDetailsComponent,
     CartComponent,
     ShippingComponent,
-    FooterComponent
+    FooterComponent,
+    ConfirmDialogComponent
    ],
   
   

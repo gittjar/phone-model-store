@@ -57,6 +57,11 @@ export class CartService {
     return this.http.get('/assets/shipping.json');
   }
 
+  getItemQuantity(product: Product): number {
+    const existingProduct = this.items.find(item => item.id === product.id);
+    return existingProduct ? existingProduct.quantity ?? 0 : 0;
+  }
+
   private updateCart() {
     const itemCount = this.items.reduce((count, item) => count + (item.quantity ?? 0), 0);
     const totalPrice = this.items.reduce((total, item) => total + (item.price * (item.quantity ?? 0)), 0);
