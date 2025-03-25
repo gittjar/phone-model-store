@@ -31,6 +31,12 @@
           <p class="mb-0">Total Price: {{ totalPrice | currency }}</p>
         </div>
       </div>
+      <button class="btn btn-primary mb-1 mx-2" type="button" data-bs-toggle="collapse" data-bs-target="#shippingCollapse" aria-expanded="false" aria-controls="shippingCollapse">
+        Check shipping costs
+      </button>
+      <div class="collapse" id="shippingCollapse">
+        <app-shipping></app-shipping>
+      </div>
 
       <form [formGroup]="checkoutForm" (ngSubmit)="onSubmit()" class="cartcard">
         <div class="card-body">
@@ -59,6 +65,8 @@
           </button>
         </div>
       </form>
+
+
     </div>
   </div>
 </div>

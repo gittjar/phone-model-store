@@ -141,7 +141,12 @@ app-top-bar {
   border: #900486 1px solid;
   border-radius: 10px;
   background-color: #ffffff;
-  box-shadow: 5px 5px 5px #900486;  
+  box-shadow: 5px 5px 5px #900486;
+  transition: transform 0.2s;
+}
+
+.card:hover {
+  transform: scale(1.02);
 }
 
 .cartcard {
@@ -168,6 +173,7 @@ app-top-bar {
 figure {
   width: 100%;
   padding: 0.1rem;
+
   
 }    
 
@@ -320,8 +326,8 @@ figure img {
   }
 
   .card {
-    margin: 5px;
-    padding: 5px;
+    margin: 12px;
+    padding: 0px;
   }
 
   .fab {

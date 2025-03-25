@@ -8,7 +8,11 @@
     "price": 9.99
   },
   {
-    "type": "Normaali postipaketti'",
+    "type": "5 arkipäivän sisällä toimitus",
+    "price": 4.99
+  },
+  {
+    "type": "Normaali postipaketti",
     "price": 2.99
   },
   {
